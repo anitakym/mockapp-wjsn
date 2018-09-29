@@ -43,6 +43,39 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/classic/latest', function (req, res, next) {
+  console.log('req', req.query)
+  res.json({
+    "content": "I love the days we spent together, before the old year lost, its shine. I'll keep that memory locked with my heart.",
+    "fav_nums": 0,
+    "id": 1,
+    "image": "http://139.199.113.45:3003/images/movie.jpg",
+    "index": 7,
+    "like_status": 0,
+    "pubdate": "2018-06-22",
+    "title": "POI",
+    "type": 100
+  })
+});
+
+router.post('/like', function (req, res, next) {
+  console.log('req', req.query)
+  res.json({
+    "error_code": 0,
+    "msg": "ok",
+    "request": "POST  /like/add"
+  })
+});
+
+router.post('/like/cancel', function (req, res, next) {
+  console.log('req', req.query)
+  res.json({
+    "error_code": 0,
+    "msg": "ok",
+    "request": "POST  /like/cancel"
+  })
+});
+
 
 
 
